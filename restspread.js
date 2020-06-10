@@ -118,7 +118,51 @@ const fullTea = {
     origin: 'china'
 };
 
-const color = ['red', 'orange']
-const dummyObj = {
-    ...color
-}
+// const color = ['red', 'orange']
+// const dummyObj = {
+//     ...color
+// } should't spread an arr or str into an obj because it uses indices so you get a weird obj
+
+const shoppingCart = [{
+        name: 'honey orchid',
+        quantity: 2,
+        price: 13.5
+    },
+    {
+        name: 'african solstice',
+        quantity: 4,
+        price: 25.99
+    }
+]
+const cartCopy = [...shoppingCart];
+
+//creating deep clones needs libraries
+
+//REST/SPREAD OPERATOR EXERCISES
+
+// filterOutOdds = () => {
+//     let nums = (...prototype);
+//     return nums.filter(function (num) {
+//         return num % 2 === 0
+//     });
+// } my attempt
+
+
+const filterOutOdds = (...args) => args.filter(v => v % 2 === 0)
+//^solution code
+
+
+// const max = () => {
+
+//     return (...max) => {
+//         return cur > min ? cur : min;
+//     };
+// } my attempt
+
+const findMin = (...args) => Math.min(...args);
+//solution code
+
+const mergeObjects = (obj1, obj2) => ({
+    ...obj1,
+    ...obj2
+});
