@@ -206,21 +206,48 @@ function addKeyVal(obj, key, val) {
 
 /** Return a new object with a key removed. */
 
-function removeKey(obj, key) {
-    let newObj = [...obj];
-    return newObj.slice(obj[key]);
-}
+// function removeKey(obj, key) {
+//     let newObj = [...obj];
+//     return newObj.slice(obj[key]);
+// } my attempt
+
+const removeKey = (obj, key) => {
+
+        // OPTION 1
+        let newObj = {
+            ...obj
+        }
+        delete newObj[key]
+        return newObj;
+
+        //solution ^ code
+
+        /** Combine two objects and return a new object. */
+
+        function combine(obj1, obj2) {
+            let newObj = {
+                ...obj1,
+                ...obj2
+            }
+            return newObj
+        }
 
 
-/** Combine two objects and return a new object. */
+        /** Return a new object with a modified key and value. */
 
-function combine(obj1, obj2) {
+        // function update(obj, key, val) {
+        // return {...obj, key[val]}
+        // } my attempt
+        // const update = (obj, key, val) => {
 
-}
+        //     // OPTION 1
 
+        //     let newObj = { ...obj }
+        //     newObj[key] = val;
+        //     return newObj;
 
-/** Return a new object with a modified key and value. */
+        //     // OPTION 2 this uses an object enhancement you'll see in the next unit)
+        //     // return { ...obj, [key]: val };
+        //   }
 
-function update(obj, key, val) {
-
-}
+        // solution ^code
